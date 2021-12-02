@@ -10,7 +10,7 @@ import News from './components/news/News';
 import { apiKey } from './components/config/api';
 function App(props) {
 
-  const pageSize = 5;
+  const pageSize = 6;
   const [progress, setProgress] = useState(0);
   return (
     <div className="App">
