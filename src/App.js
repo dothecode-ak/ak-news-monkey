@@ -2,12 +2,15 @@
 import { useState } from 'react';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
 import Header from './components/header/Header';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar';
 import News from './components/news/News';
 import { apiKey } from './components/config/api';
-function App() {
+function App(props) {
+  const countryData = props.country;
+  console.log(props);
   const pageSize = 5;
   const [progress, setProgress] = useState(0);
   return (
@@ -18,7 +21,7 @@ function App() {
           color='#f11946'
           progress={progress} />
         <Routes>
-          <Route path='/' element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />}></Route>
+          <Route path='/' element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country={countryData} category="general" />}></Route>
           <Route path='/business' element={<News setProgress={setProgress} apiKey={apiKey} key="business" pageSize={pageSize} country="in" category="business" />}></Route>
           <Route path='/entertainment' element={<News setProgress={setProgress} apiKey={apiKey} key="entertainment" pageSize={pageSize} country="in" category="entertainment" />}></Route>
           <Route path='/general' element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />}></Route>

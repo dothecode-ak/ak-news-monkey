@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Header = () => {
+const Header = (props) => {
     return (<>
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
@@ -21,15 +21,15 @@ const Header = () => {
                         <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>
                         <li className="nav-item"><Link className="nav-link" to="/technology">Technology</Link></li>
                     </ul>
-                    <div class="dropdown">
+                    {/* <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             Country
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li className="nav-item"><Link className="nav-link" to="/business">India</Link></li>
-
+                            <li className="nav-item"><Link className="nav-link" to="/" country='in'>India</Link></li>
+                            <li className="nav-item"><Link className="nav-link" to="/" country='en'>USA</Link></li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
